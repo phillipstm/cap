@@ -1,9 +1,9 @@
 'use strict';
 
 const eventPool = require('./eventPool');
-const chance = require('./modules/chance');
-const { driverHandler } = require('./modules/driver');
-const { deliveredHandler, pickupHandler } = require('./modules/vendor');
+const chance = require('./src/modules/chance');
+const { driverHandler } = require('./src/modules/driver');
+const { deliveredHandler, pickupHandler } = require('./src/modules/vendor');
 
 class EventLog {
   constructor(event, payload) {

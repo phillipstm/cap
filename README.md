@@ -32,7 +32,6 @@ We don’t want our clients having to refresh their browser to get the latest st
 We also are aware that they will not always have their browser open …
 So, if they leave & come back, it’s imperative that they can the state of things since they last logged in.
 
-
 ### Authors: Teresa Phillips
 
 - tests report
@@ -56,7 +55,6 @@ So, if they leave & come back, it’s imperative that they can the state of thin
     “mock” the running Express server
     Deployment to Heroku
 
-
 #### Tests
 
     - Unit Tests: npm run test
@@ -64,8 +62,7 @@ So, if they leave & come back, it’s imperative that they can the state of thin
 
 #### UML
 
-![UML]()
-
+![UML](https://www.figma.com/file/iPrHyigOyH4YzDBuvina4x/Event-Driven-Application?node-id=0%3A1&t=kG0ypY2S4vC9poY8-1)
 
 ## Links
 
