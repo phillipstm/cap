@@ -3,7 +3,7 @@
 const eventPool = require('../../eventPool');
 const chance = require('./chance');
 
-let pickupHandler = (store) => {
+let vendorPickup = (store) => {
   let payload = {
     store,
     orderID: chance.guid(),
@@ -18,4 +18,5 @@ let deliveredHandler = (payload) => {
   console.log(`VENDOR: Thank you, ${payload.customer}`);
 };
 
-module.exports = { pickupHandler, deliveredHandler };
+module.exports = {vendorPickup.payload};
+  
