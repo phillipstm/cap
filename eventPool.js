@@ -6,7 +6,7 @@ const eventPool = new Event();
 
 const driverHandler = require('./src/modules/drivers');
 
-const pickupHandler = require('./src/modules/vendorPickup');
+const vendorPickup = require('./src/modules/vendorPickup');
 // Create client list
 // create functions for clients
 
