@@ -1,13 +1,18 @@
 'use strict';
 
-const eventPool = require('../../eventPool');
-const vendorPickup
+// import { emit } from '../../eventPool';
+import eventPool from '../../eventPool';
+let eventPool = require('../../eventPool');
 
-let driverPickUp = (payload) => {
-  console.log(`DRIVER: pick up ready ${payload.orderID}`);
-  eventPool.emit('in-transit', payload);
-  console.log(`DRIVER: delivered ${payload.orderID}`);
-  eventPool.emit('delivery complete', payload);
-};
 
-module.exports = { driverHandler };
+let driverHandler = (payload) => {
+  setTimeout(() => {
+    console.log('DRIVER: Vendor pick up ${payload.orderID}')
+    eventPool.emit('Driver pickup', payload.orderID);
+  console.log('DRIVER: in-transit' + payload.orderID);
+
+
+  eventPool.emit('delivery in-transit', payload.company);
+}, 1000);
+}
+export default { driverHandler };

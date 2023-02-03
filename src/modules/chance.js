@@ -4,17 +4,13 @@ const Chance = require('chance');
 
 const chance = new Chance();
 
-let customer = {
-    name: chance.name,
+let payload = {
+    store: chance.company,
+    customer: chance.name,
     orderId: chance.guid,
     address: chance.address,
     date: chance.date,
     time: chance.timestamp,
 };
 
-let store = {
-   store: chance.company,
-   orderId: chance 
-}
-
-module.exports = chance;
+module.exports = payload;

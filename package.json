@@ -9,7 +9,7 @@
   "name": "cap",
   "description": "## Problem Domain",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "hub.js",
   "scripts": {
     "start": "node index.js",
     "lint": "eslint **/*.js",

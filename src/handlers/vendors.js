@@ -1,21 +1,21 @@
 'use strict';
 
 import { emit } from '../../eventPool';
-import { guid, name, address as _address } from './chance';
+import { guid, name, address as _address } from '../modules/chance';
 
-let pickupHandler = (store) => {
+let pickupHandler = (payload) => {
   let payload = {
-    store,
+    store: company(),
     orderID: guid(),
     customer: name(),
-    address: _address(),
+    address: _address(({short_suffix: true})),
   };
-  console.log(`VENDOR: ready for pickup ${payload.orderID}`);
-  emit('pickup', payload);
+  console.log(`VENDOR: ready for pickup ${payload.company}`);
+  emit('Vendor pickup', payload.orderID);
 };
 
-let deliveredHandler = (payload) => {
-  console.log(`VENDOR: Thank you, ${payload.customer}`);
-};
+// let deliveredHandler = (payload) => {
+//   console.log(`VENDOR: Thank you, ${payload.customer}`);
+// };
 
-export default { pickupHandler, deliveredHandler };
+export default { pickupHandler };
