@@ -1,7 +1,7 @@
 'use strict';
 
-const eventPool = require('../../eventPool');
-const chance = require('./chance');
+const eventPool = require('../eventPool');
+const chance = require('../modules/chance');
 
 let vendorPickup = (payload) => {
   let payload = {
@@ -11,12 +11,9 @@ let vendorPickup = (payload) => {
     address: chance.address({short_suffix: true}),
   };
   console.log(`VENDOR: ready for pickup ${payload.store}`);
-  eventPool.emit('Vendor pickup', payload);
+  eventPool.emit('VENDOR PICKUP', payload);
 };
 
-// let deliveredHandler = (payload) => {
-//   console.log(`VENDOR: Thank you, ${payload.customer}`);
-// };
 
 module.exports = {vendorPickup};
   
