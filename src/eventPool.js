@@ -1,8 +1,8 @@
 'use strict';
 
 const Event = require('events');
-
 const eventPool = new Event();
+
 // const pickupHandler = require('./src/handlers/vendors');
 // const driverHandler = require('./src/handlers/drivers');
 
