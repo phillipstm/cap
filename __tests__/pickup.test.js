@@ -1,6 +1,6 @@
 'use strict';
 
-const handlePickup = require('../src/handlers/pickup.js');
+const vendorPickup = require('../src/handlers/vendorPickup.js');
 const eventPool = require('../eventPool');
 
 /* 2 params to mock
@@ -14,12 +14,12 @@ jest.mock(eventPool, () => {
     }
 });
 
-describe('Handle Pick Test', () => {
+describe('VENDOR PICKUP Test', () => {
     console.log = jest.fn();
 
-    test('log and emit Pick Handler event', () => {
-        handlePickup({message: ready});
-        expect(console.log).toHaveBeenCalledWith('Package: new order', {message: ready});
-        expect(eventPool.emit).toHaveBeenCalledWith('Pickup', 'ready');
+    test('log and emit VENDOR PICKUP Handler event', () => {
+        vendorPickup({message: ready});
+        expect(console.log).toHaveBeenCalledWith('VENDOR PICKUP: new order', {message: ready});
+        expect(eventPool.emit).toHaveBeenCalledWith('VENDOR PICKUP', 'ready');
     });
 })

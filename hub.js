@@ -2,10 +2,10 @@
 
 
 const eventPool = require('./src/eventPool');
-const chance = require('./src/modules/chance');
+const Chance = require('chance');
 const { vendorPickup } = require('./src/handlers/vendorPickup');
 const { driverHandler } = require('./src/handlers/driver');
-const { driverDelivered } = require('./src/handlers/driverDelivered')
+const { driverDelivered } = require('./src/handlers/driverDelivered');
 const { deliveredHandler } = require('./src/handlers/vendor');
 const chance = new Chance();
 
@@ -27,5 +27,5 @@ setInterval(() => {
 };
 
   console.log('-----new order----');
-  eventPool.emit('VENDOR PICKUP', { order: payload });
+  eventPool.emit('VENDOR PICKUP ', {order: payload});
 }, 5000);

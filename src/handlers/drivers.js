@@ -13,6 +13,6 @@ let driverHandler = (payload) => {
 
 
     eventPool.emit('IN-TRANSIT', payload.company);
-  }, 1000);
+  }, 3000);
 }
 export default { driverHandler };
