@@ -1,6 +1,5 @@
 'use strict';
 
-
 const eventPool = require('./src/eventPool');
 const Chance = require('chance');
 const { vendorPickup } = require('./src/handlers/vendorPickup');
@@ -17,15 +16,15 @@ eventPool.on('DRIVER-DELIVERED', driverDelivered);
 eventPool.on('DELIVERED', deliveredHandler);
 
 setInterval(() => {
-  const  payload = {
+  const payload = {
     store: chance.company,
     customer: chance.name,
     orderId: chance.guid,
     address: chance.address,
     date: chance.date,
     time: chance.timestamp,
-};
+  };
 
   console.log('-----new order----');
-  eventPool.emit('VENDOR PICKUP ', {order: payload});
+  eventPool.emit('VENDOR PICKUP ', { order: payload });
 }, 5000);
