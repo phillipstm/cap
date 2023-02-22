@@ -1,25 +1,30 @@
 'use strict';
 
-const eventPool = require('./eventPool');
-const chance = require('./src/modules/chance');
-const { driverHandler } = require('./src/modules/driver');
-const { deliveredHandler, pickupHandler } = require('./src/modules/vendor');
+const eventPool = require('./src/eventPool');
+const Chance = require('chance');
+const { vendorPickup } = require('./src/handlers/vendorPickup');
+const { driverHandler } = require('./src/handlers/driver');
+const { driverDelivered } = require('./src/handlers/driverDelivered');
+const { deliveredHandler } = require('./src/handlers/vendor');
+const chance = new Chance();
 
-class EventLog {
-  constructor(event, payload) {
-    this.event = event;
-    this.time = new Date.toTimeString();
-    this.payload = payload;
-  }
-  log() {
-    console.log(this);
-  }
-}
 
-eventPool.on('pickup', (payload) => new EventLog('pickup', payload).log());
-eventPool.on('pickup', driverHandler);
-eventPool.on('in-transit', (payload) => new EventLog('in-transit', payload).log());
-eventPool.on('delivered', (payload) => new EventLog('delivered', payload).log());
-eventPool.on('delivered', deliveredHandler);
 
-pickupHandler(chance.company());
+eventPool.on('VENDOR PICKUP', vendorPickup);
+eventPool.on('DRIVER PICKUP', driverHandler);
+eventPool.on('DRIVER-DELIVERED', driverDelivered);
+eventPool.on('DELIVERED', deliveredHandler);
+
+setInterval(() => {
+  const payload = {
+    store: chance.company,
+    customer: chance.name,
+    orderId: chance.guid,
+    address: chance.address,
+    date: chance.date,
+    time: chance.timestamp,
+  };
+
+  console.log('-----new order----');
+  eventPool.emit('VENDOR PICKUP ', { order: payload });
+}, 5000);

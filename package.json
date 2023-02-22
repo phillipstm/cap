@@ -1,17 +1,21 @@
 {
   "dependencies": {
     "chance": "^1.1.9",
+    "cjs-loader": "^0.1.0",
     "dotenv": "^16.0.3",
-    "eslint": "^8.24.0",
+    "eslintrc": "^1.0.6",
     "express": "^4.18.1",
-    "jest": "^29.1.2"
+    "jest": "^29.1.2",
+    "node": "^19.6.0",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1"
   },
   "name": "cap",
   "description": "## Problem Domain",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "hub.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node hub.js",
     "lint": "eslint **/*.js",
     "test": "jest --verbose --coverage",
     "test-watch": "jest --watchAll --verbose --coverage",
@@ -29,5 +33,7 @@
     "url": "https://github.com/phillipstm/cap/issues"
   },
   "homepage": "https://github.com/phillipstm/cap#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^8.34.0"
+  }
 }

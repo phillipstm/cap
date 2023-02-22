@@ -67,4 +67,4 @@ So, if they leave & come back, it’s imperative that they can the state of thin
 ## Links
 
 - Latest PR on GitHub:
-- Heroku link:
+- Render link:
