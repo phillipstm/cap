@@ -1,8 +1,8 @@
 'use strict';
 
 // import { emit } from '../../eventPool';
-// import eventPool from '../../eventPool';
-let eventPool = require('../../eventPool');
+const eventPool = require('../eventPool');
+// let eventPool = require('../../eventPool');
 
 
 module.exports = (payload) => {

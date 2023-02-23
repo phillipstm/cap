@@ -1,11 +1,11 @@
 'use strict';
 
-const eventPool = require('./src/eventPool');
+const eventPool = require('./eventPool');
 const Chance = require('chance');
-const { vendorPickup } = require('./src/handlers/vendorPickup');
-const { driverHandler } = require('./src/handlers/driver');
-const { driverDelivered } = require('./src/handlers/driverDelivered');
-const { deliveredHandler } = require('./src/handlers/vendor');
+const { vendorPickup } = require('./handlers/vendorPickup').default;
+const { driverHandler } = require('./handlers/drivers');
+const { driverDelivered } = require('./handlers/driverDelivered').default;
+const { deliveredHandler } = require('./handlers/vendor');
 const chance = new Chance();
 
 

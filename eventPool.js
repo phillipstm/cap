@@ -3,10 +3,10 @@
 const Event = require('events');
 const eventPool = new Event();
 
-// const pickupHandler = require('./src/handlers/vendors');
-// const driverHandler = require('./src/handlers/drivers');
+// const pickupHandler = require('./handlers/vendors');
+// const driverHandler = require('./handlers/drivers');
 
-// const vendorPickup = require('./src/modules/vendorPickup');
+// const vendorPickup = require('./src/vendorPickup');
 
 
 // // Create client list
