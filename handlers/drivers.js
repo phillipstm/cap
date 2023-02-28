@@ -5,14 +5,18 @@ const eventPool = require('../eventPool');
 // let eventPool = require('../../eventPool');
 
 
-module.exports = (payload) => {
+function driverHandler(payload) {
   setTimeout(() => {
     console.log('DRIVER: Order has been picked up ${payload.orderID}');
     eventPool.emit('DRIVER PICKUP', payload.orderID);
-    console.log('DRIVER: in-transit' + payload.orderID);
-
-
-    eventPool.emit('IN-TRANSIT', payload.company);
   }, 3000);
-};
-// module.export driverHandler;
+}
+function transitHandler(payload) {
+  setTimeout(() => {
+    console.log('DRIVER: in-transit' + payload.orderID);
+    eventPool.emit('IN-TRANSIT', payload.company);
+  }, 3010);
+}
+
+
+module.exports = { driverHandler, transitHandler };
