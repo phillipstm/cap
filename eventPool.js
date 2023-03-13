@@ -1,6 +1,6 @@
 'use strict';
 
-const Event = require('events');
+const Event = require( 'events');
 const eventPool = new Event();
 
 // const pickupHandler = require('./handlers/vendors');
@@ -27,4 +27,5 @@ const eventPool = new Event();
 // }
 
 /// Above set interval add the functions that will receive event function name(payload){ console.log('Message Received', payload)};..could have crud or rest operations, could emit also
-module.exports = eventPool;
+
+module.exports =  eventPool;

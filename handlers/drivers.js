@@ -1,19 +1,23 @@
 'use strict';
 
-// import { emit } from '../../eventPool';
 const eventPool = require('../eventPool');
-// let eventPool = require('../../eventPool');
-
+const payload = payload;
 
 function driverHandler(payload) {
   setTimeout(() => {
-    console.log('DRIVER: Order has been picked up ${payload.orderID}');
-    eventPool.emit('DRIVER PICKUP', payload.orderID);
+    let event = {
+      event: 'DRIVER_PICKUP',
+      time: 'date.toCSTString()',
+      orderID: 'guid.toString()',
+      payload: payload,
+    };
+    console.log('DRIVER: Order has been picked up', payload);
+    eventPool.emit('DRIVER_PICKUP', event.payload);
   }, 3000);
 }
 function transitHandler(payload) {
   setTimeout(() => {
-    console.log('DRIVER: in-transit' + payload.orderID);
+    console.log('DRIVER: in-transit', payload.orderID);
     eventPool.emit('IN-TRANSIT', payload.company);
   }, 3010);
 }
