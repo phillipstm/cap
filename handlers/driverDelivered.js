@@ -1,12 +1,14 @@
 'use strict';
 
-const eventPool = require('../eventPool');
+let eventPool = require('../eventPool');
 
-function driverDelivered(payload) {
+
+module.exports = (payload) => {
   setTimeout(() => {
-    console.log('Driver: Has delivered');
-    eventPool.emit('DRIVER-DELIVERED', payload.orderId);
-  }, 3000);
-}
 
-module.exports = { driverDelivered };
+    console.log(`Driver: Has delivered to ${payload.customer}`);
+    eventPool.emit('DRIVER-DELIVERED', payload);
+  }, 3000);
+
+};
+
