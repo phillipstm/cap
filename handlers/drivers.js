@@ -10,8 +10,6 @@ module.exports = (payload) => {
 
     console.log(`DRIVER: In-transit with orderID, ${payload.orderID}`);
 
-    // console.log(`Driver: Has delivered ${payload.orderID}`);
-    // eventPool.emit('IN-TRANSIT', payload);
 
   }, 2000);
 
