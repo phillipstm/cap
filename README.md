@@ -53,7 +53,7 @@ So, if they leave & come back, it’s imperative that they can the state of thin
     Tests will use a 3rd party library called supergoose to:
     “mock” the mongo running database
     “mock” the running Express server
-    Deployment to Heroku
+    Deployment to Render
 
 #### Tests
 
@@ -67,4 +67,4 @@ So, if they leave & come back, it’s imperative that they can the state of thin
 ## Links
 
 - Latest PR on GitHub:
-- Heroku link:
+- Render link:
